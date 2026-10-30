@@ -45,4 +45,16 @@ if(heroVideo){
  heroVideo.addEventListener('canplay',syncPlayback);
  heroVideo.addEventListener('play',()=>{if(!shouldPlay())heroVideo.pause();});
  syncPlayback();
+}const reviewsSection=document.querySelector('.reviews');
+const reviewsToggle=document.querySelector('.reviews-toggle');
+if(reviewsSection&&reviewsToggle){
+ reviewsToggle.addEventListener('click',()=>{
+  const paused=reviewsSection.classList.toggle('is-paused');
+  reviewsToggle.setAttribute('aria-pressed',String(paused));
+  reviewsToggle.innerHTML=paused?'Continuar carrossel <span aria-hidden="true">↗</span>':'Pausar carrossel <span aria-hidden="true">Ⅱ</span>';
+ });
+ if('IntersectionObserver' in window){
+  const reviewsObserver=new IntersectionObserver(([entry])=>{reviewsSection.querySelector('.reviews-track').style.animationPlayState=entry.isIntersecting?'':'paused'});
+  reviewsObserver.observe(reviewsSection);
+ }
 }
