@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="325" height="280" viewBox="0 0 325 280" role="img" aria-labelledby="title desc">
+  <title id="title">Viko — mascote Bunviko</title>
+  <desc id="desc">Marca Bunviko em curvas vetoriais, sem dependência de fontes e com fundo transparente.</desc>
+  <g transform="translate(8 12)"><g id="viko">
+      <path fill="#FFF0D2" d="M27 205C19 182 24 141 38 104C60 46 104 23 156 24C212 25 254 56 273 108C286 142 291 179 285 204C280 228 256 240 229 242C178 247 121 247 74 242C48 240 33 229 27 205Z"/>
+      <g fill="none" stroke="#32231C" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M103 113L70 140L103 166M210 113L243 140L210 166"/>
+        <path d="M129 190Q157 219 185 190"/>
+      </g>
+      <g fill="none" stroke="#EF7130" stroke-width="14" stroke-linecap="round">
+        <path d="M231 32L236 12M260 45L272 29"/>
+      </g>
+    </g></g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="710" height="215" viewBox="0 0 710 215" role="img" aria-labelledby="title desc">
+  <title id="title">Bunviko — logotipo</title>
+  <desc id="desc">Marca Bunviko em curvas vetoriais, sem dependência de fontes e com fundo transparente.</desc>
+  <g transform="translate(0 0)"><g id="bunviko-wordmark" fill="none" stroke="#32231C" stroke-width="25" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M30 47V146"/>
+      <circle cx="65" cy="144" r="35"/>
+      <path d="M131 109V147C131 190 198 190 198 147V109"/>
+      <path d="M231 178V143C231 96 298 96 298 143V178"/>
+      <path d="M329 110L361 178L393 110"/>
+      <path d="M423 116V178"/>
+      <path d="M458 47V178M511 110L465 145L516 178"/>
+      <circle cx="572" cy="144" r="35"/>
+    </g><circle cx="423" cy="79" r="13" fill="#32231C"/>
+    <g id="touch-rays" fill="none" stroke="#EF7130" stroke-width="14" stroke-linecap="round">
+      <path d="M625 61L630 42M648 83L663 69M657 111L678 114"/>
+    </g></g>
+</svg>
