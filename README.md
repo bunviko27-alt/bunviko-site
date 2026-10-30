@@ -25,4 +25,4 @@ As imagens são conceitos visuais; materiais, componentes, medidas, preços e di
 
 A abertura apresenta Viko e a marca por 3,35 segundos, uma vez por sessão, com opção de pular, saída por teclado e fallback de segurança. Respeita movimento reduzido. O carrossel contém oito personas e retratos fictícios gerados por IA, identificados como exemplos; não representa avaliações reais nem conteúdo do Google. Fotografias de produto distintas por seção.
 
-O carrossel mantém movimento contínuo com fade e sem barra horizontal, inclusive em navegadores com preferência de movimento reduzido, conforme solicitado. O botão permite pausar explicitamente; passar o mouse não interrompe a animação.
+O carrossel mantém movimento contínuo com fade e sem barra horizontal, inclusive em navegadores com preferência de movimento reduzido, conforme solicitado. Sem controle de pausa; passar o mouse não interrompe a animação.
