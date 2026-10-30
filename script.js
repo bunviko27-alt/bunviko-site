@@ -12,12 +12,37 @@ all('[data-info]').forEach(b=>b.onclick=()=>{$('#dialog-title').textContent=init
 const articles=[['Um personagem que recebe antes do primeiro pedido.','O Viko foi pensado como a presença acolhedora da Bunviko. Os olhos em forma de símbolos de código conectam o personagem à tecnologia. O sorriso e a silhueta de pão aproximam a marca do universo das lanchonetes e hamburguerias.'],['Menos etapas entre a vontade e a escolha.','A demonstração organiza o pedido em etapas: escolher onde comer, explorar o cardápio, personalizar e conferir a sacola. O objetivo do protótipo é tornar cada próxima ação clara e fácil de encontrar. A validação com clientes será parte dos próximos passos.'],['Um aparelho que encontra seu lugar na mesa.','A direção visual do hardware parte de uma carcaça arredondada, tela inclinada e botão superior. O conceito busca uma presença simpática no ambiente do restaurante. O modelo físico e seus componentes ainda precisam ser definidos e validados.']];
 all('[data-article]').forEach(b=>b.onclick=()=>{const a=articles[Number(b.dataset.article)];$('#dialog-title').textContent=a[0];$('#dialog-content').textContent=a[1];$('#info-dialog').showModal()});
 $('.close').onclick=()=>$('#info-dialog').close();$('#info-dialog').onclick=e=>{if(e.target===$('#info-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}};
-const heroVideo=document.querySelector('#hero-video'),videoToggle=document.querySelector('#video-toggle');
-if(heroVideo&&videoToggle){
- const syncVideoButton=()=>{const paused=heroVideo.paused;videoToggle.textContent=paused?'Reproduzir vídeo ▷':'Pausar vídeo Ⅱ';videoToggle.setAttribute('aria-label',paused?'Reproduzir vídeo':'Pausar vídeo');};
+const heroVideo=document.querySelector('#hero-video');
+if(heroVideo){
+ const heroSection=document.querySelector('#inicio');
  heroVideo.muted=true;
- heroVideo.addEventListener('play',syncVideoButton);heroVideo.addEventListener('pause',syncVideoButton);
- videoToggle.onclick=()=>{if(heroVideo.paused)heroVideo.play().catch(syncVideoButton);else heroVideo.pause();};
- if(reduced){heroVideo.autoplay=false;heroVideo.pause();}else{heroVideo.play().catch(syncVideoButton);}
- syncVideoButton();
+ heroVideo.loop=true;
+ heroVideo.controls=false;
+ const initialRect=heroSection.getBoundingClientRect();
+ let heroVisible=initialRect.bottom>0&&initialRect.top<window.innerHeight;
+ const shouldPlay=()=>heroVisible&&document.visibilityState==='visible';
+ const syncPlayback=()=>{
+  if(shouldPlay()){
+   if(heroVideo.paused)heroVideo.play().catch(()=>{});
+  }else heroVideo.pause();
+ };
+ if('IntersectionObserver' in window){
+  const videoObserver=new IntersectionObserver(([entry])=>{
+   heroVisible=entry.isIntersecting&&entry.intersectionRect.height>0;
+   syncPlayback();
+  },{threshold:0});
+  videoObserver.observe(heroSection);
+ }else{
+  window.addEventListener('scroll',()=>{
+   const rect=heroSection.getBoundingClientRect();
+   heroVisible=rect.bottom>0&&rect.top<window.innerHeight;
+   syncPlayback();
+  },{passive:true});
+ }
+ document.addEventListener('visibilitychange',syncPlayback);
+ window.addEventListener('pagehide',()=>heroVideo.pause());
+ window.addEventListener('pageshow',syncPlayback);
+ heroVideo.addEventListener('canplay',syncPlayback);
+ heroVideo.addEventListener('play',()=>{if(!shouldPlay())heroVideo.pause();});
+ syncPlayback();
 }
