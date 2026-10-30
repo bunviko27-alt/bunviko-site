@@ -54,7 +54,7 @@ if(reviewsSection&&reviewsToggle){
   reviewsToggle.innerHTML=paused?'Continuar carrossel <span aria-hidden="true">↗</span>':'Pausar carrossel <span aria-hidden="true">Ⅱ</span>';
  });
  if('IntersectionObserver' in window){
-  const reviewsObserver=new IntersectionObserver(([entry])=>{reviewsSection.querySelector('.reviews-track').style.animationPlayState=entry.isIntersecting?'':'paused'});
+  const reviewsObserver=new IntersectionObserver(([entry])=>{reviewsSection.classList.toggle('is-offscreen',!entry.isIntersecting)});
   reviewsObserver.observe(reviewsSection);
  }
 }

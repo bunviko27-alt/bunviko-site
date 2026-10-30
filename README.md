@@ -23,4 +23,6 @@ Adaptação da estrutura da página inicial de https://coorda.framer.website/ à
 As imagens são conceitos visuais; materiais, componentes, medidas, preços e disponibilidade comercial estão em definição. O site não tem formulário de contato nem backend.
 
 
-A abertura apresenta Viko e a marca por 3,35 segundos, uma vez por sessão, com opção de pular, saída por teclado e fallback de segurança. Respeita movimento reduzido. O carrossel contém quatro personas e retratos fictícios gerados por IA, identificados como exemplos; não representa avaliações reais nem conteúdo do Google. Fotografias de produto distintas por seção.
+A abertura apresenta Viko e a marca por 3,35 segundos, uma vez por sessão, com opção de pular, saída por teclado e fallback de segurança. Respeita movimento reduzido. O carrossel contém oito personas e retratos fictícios gerados por IA, identificados como exemplos; não representa avaliações reais nem conteúdo do Google. Fotografias de produto distintas por seção.
+
+O carrossel mantém movimento contínuo com fade e sem barra horizontal, inclusive em navegadores com preferência de movimento reduzido, conforme solicitado. O botão permite pausar explicitamente; passar o mouse não interrompe a animação.
